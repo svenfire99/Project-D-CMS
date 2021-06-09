@@ -1,0 +1,13 @@
+services:
+  # General Content
+    app.admin.user:
+        class: AppBundle\Admin\TablewareAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Tablewares" }
+        arguments:
+            - ~
+            - AppBundle\Entity\Tableware
+            - ~
+        calls:
+            - [ setTranslationDomain, [AppBundle]]
+        public: true
